@@ -14,7 +14,7 @@ services:
     volumes:
       - test-mysql-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_DATABASE=test
@@ -22,12 +22,22 @@ services:
       - MYSQL_PASSWORD=test
 
   # PHP (with Caddy)
-  app:
+  backend:
     image: ambientum/php:7.2-nginx
-    container_name: test-app
+    container_name: test-backend
     volumes:
-      - .:/var/www/app
+      - ./backend:/var/www/app
     ports:
-      - "80:8080"
+      - "8000:8080"
     links:
       - mysql
+  
+  frontend:
+    build: ./frontend
+    container_name: test-frontend
+    command: ['yarn', 'serve']
+    volumes: 
+      - "./frontend:/app"
+    working_dir: /app
+    ports: 
+      - "8080:8080"
