@@ -12,7 +12,7 @@ services:
     image: mysql:5.7
     container_name: test-mysql
     volumes:
-      - test-mysql-data:/var/lib/mysql
+      - .docker/db:/var/lib/mysql
     ports:
       - "3307:3306"
     environment:
@@ -31,7 +31,7 @@ services:
       - "8000:8080"
     links:
       - mysql
-  
+
   frontend:
     build: ./frontend
     container_name: test-frontend
@@ -41,3 +41,5 @@ services:
     working_dir: /app
     ports: 
       - "8080:8080"
+    links:
+      - backend

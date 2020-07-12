@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::apiResource('imovel', 'ImovelController')->names('imovel');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
