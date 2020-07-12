@@ -1,50 +1,15 @@
 <template>
-  <header id="navbar" class="uk-container uk-background-secondary uk-box-shadow-small" uk-sticky="animation: uk-animation-slide-top-medium;  top: 200; cls-active: uk-active uk-navbar-sticky uk-background-primary uk-box-shadow-small;">
-    <nav class="uk-navbar " uk-navbar>
-
-    <div class="uk-navbar-left">
-      <div class="uk-navbar-item">
-        <router-link to="/"><img src="../assets/logo.png" width="250" /></router-link>
+  <div class=" uk-background-muted header" uk-sticky=" animation: uk-animation-slide-top-small;  top: 200; cls-inactive: uk-section-small ; cls-active: uk-active uk-navbar-sticky uk-box-shadow-small; offset: 80;">
+        <div class="uk-container uk-flex uk-flex-between">
+          <h1 class="uk-h3 uk-text-bold uk-text-uppercase">{{ titulo }}</h1>
+          <div>
+            <router-link class="uk-link-reset" :to="link.url" > <span uk-tooltip="{ link.titulo }" uk-icon="icon: plus"></span></router-link>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="uk-navbar-right">
-
-        <ul class="uk-navbar-nav uk-light">
-            <li>
-              <router-link to="/imoveis">Imóveis</router-link>
-            </li>
-        </ul>
-
-    </div>
-
-</nav>
-  </header>
 </template>
-
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  props: ['titulo', 'link']
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

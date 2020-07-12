@@ -10,9 +10,19 @@ Vue.use(VueRouter)
     component: () => import('../views/Home.vue')
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {
     path: '/imoveis',
     name: 'Imoveis',
     component: () => import('../views/Imoveis.vue')
+  },
+  {
+    path: '/imoveis/criar',
+    name: 'ImoveisCreate',
+    component: () => import('../views/ImoveisCreate.vue')
   }
 ]
 

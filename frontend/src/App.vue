@@ -1,15 +1,20 @@
 <template>
   <div>
-    <df-header />
+    <df-navbar v-if="authData" />
     <router-view/>
   </div>
 </template>
 
 <script>
-import DfHeader from "@/components/HeaderComponent"
+import DfNavbar from "@/components/NavbarComponent"
 export default {
+  data(){
+    return {
+      authData: false
+    }
+  },
   components: {
-    DfHeader
+    DfNavbar
   }
 }
 </script>

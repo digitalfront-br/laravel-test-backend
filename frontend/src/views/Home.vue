@@ -6,11 +6,7 @@
       </div>
       <div v-else>
 
-      <div class=" uk-background-muted header" uk-sticky=" animation: uk-animation-slide-top-small;  top: 200; cls-inactive: uk-section-small ; cls-active: uk-active uk-navbar-sticky uk-box-shadow-small; offset: 80;">
-        <div class="uk-container">
-          <h1 class="uk-h3 uk-text-bold uk-text-uppercase">Imóveis cadastrados</h1>
-        </div>
-      </div>
+      <df-header :titulo="header.titulo" :link="header.link" />
       <div class="uk-container">
     <table    class="uk-table uk-table-justify uk-table-divider">
       <thead>
@@ -68,10 +64,19 @@
 <script>
 import API from "@/services/API.js"; 
 import DfPagination from "@/components/paginateComponent.vue";
+import DfHeader from "@/components/HeaderComponent.vue";
 import {Fragment} from "vue-fragment"
+
 export default {
   data() {
     return {
+      header:{
+        titulo: "Home page",
+        link: {
+          titulo: "Novo Imóvel",
+          url: "/imoveis/criar"
+        }
+      },
       imoveis: null,
       paginacao: null,
       order: ''
@@ -79,7 +84,8 @@ export default {
   },
   components: {
     Fragment,
-    "df-pagination": DfPagination
+    "df-pagination": DfPagination,
+    "df-header": DfHeader
   },
   methods:{
     navigate(page) {

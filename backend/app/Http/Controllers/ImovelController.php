@@ -32,7 +32,8 @@ class ImovelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $imovel = Imovel::create($request->all());
+        return $imovel;
     }
 
     /**

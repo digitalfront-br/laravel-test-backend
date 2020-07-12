@@ -20,7 +20,8 @@ class CreateImovelsTable extends Migration
             $table->boolean('status')->default(0);
             $table->string('numero');
             $table->string('bairro');
-            $table->unsignedBigInteger('cidade_id');
+            $table->string('complemento')->default('');
+            $table->bigInteger('cidade_id');
             $table->timestamps();
         });
     }

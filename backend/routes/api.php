@@ -18,6 +18,7 @@ Route::post('auth/login', 'Api\\AuthController@login');
 
 
 Route::apiResource('imovel', 'ImovelController')->names('imovel');
+Route::apiResource('estados', 'EstadoController')->names('estado');
 // Route::apiResource('imovel', 'ImovelController', ['middleware' => ['apiJwt']])->names('imovel');
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
