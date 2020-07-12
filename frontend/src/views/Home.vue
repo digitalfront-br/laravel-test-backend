@@ -1,18 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Vue docker headless"/>
+    Home
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import API from '@/services/API.js'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      dados: []
+    }
+  },
+  mounted(){
+    // API.get('imovel',{})
+    API.post('auth/login', {
+      "email": "email@site.com",
+      "password": "password"
+    })
+      .then(res => console.log(res))
+      .catch(res => console.log(res))
   }
 }
 </script>
