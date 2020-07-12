@@ -17,6 +17,8 @@ class CreateImovelsTable extends Migration
             $table->id();
             $table->string('email');
             $table->string('rua');
+            $table->boolean('status')->default(0);
+            $table->string('numero');
             $table->string('bairro');
             $table->unsignedBigInteger('cidade_id');
             $table->timestamps();

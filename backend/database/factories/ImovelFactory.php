@@ -40,7 +40,9 @@ $factory->define(Imovel::class, function (Faker $faker) {
         Imovel::create([
             'email'  =>  $faker->email,
             'rua'    =>  $faker->streetName,
-            'bairro' =>  $faker->firstName(),
+            'numero' =>  $faker->buildingNumber,
+            'status' =>  $faker->numberBetween(0,1),
+            'bairro' =>  $faker->word(),
             'cidade_id' => DB::table('cidades')->get()->random()->id,
         ]);
     }

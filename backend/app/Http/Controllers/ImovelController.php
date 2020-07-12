@@ -13,10 +13,15 @@ class ImovelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $imoveis = Imovel::paginate();
-        return $imoveis;
+        $imoveis = Imovel::with('cidade.estado');
+        if ($request->orderBy && $request->orderBy !== null){
+            $item = $request->orderBy;
+            return $imoveis->orderBy($item, 'asc')->paginate(10);
+        }else {
+            return $imoveis->paginate(10);
+        }
     }
 
     /**
