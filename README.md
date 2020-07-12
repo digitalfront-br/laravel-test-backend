@@ -1,7 +1,6 @@
-### Sobre a Accordous
+### Instruções
 ##### Não perca mais tempo com seus contratos.
-Somos uma empresa de tecnologia voltada a simplificação de processos burocráticos! Desde a concepção até a cobrança de contratos, seja ele de imóveis, acordo, prestação de serviços, entre outros.
-
+Apos clonar o repositorio
 
 ##### Teste Full Stack Laravel
 O objetivo deste teste é entendermos um pouco mais sobre seus conhecimentos de Frontend e Backend no Laravel.

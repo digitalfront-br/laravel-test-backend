@@ -1,6 +1,6 @@
 <template>
   <div>
-    <df-navbar v-if="authData" />
+    <df-navbar />
     <router-view/>
   </div>
 </template>
@@ -12,6 +12,9 @@ export default {
     return {
       authData: false
     }
+  },
+  mounted(){
+    this.login
   },
   components: {
     DfNavbar
