@@ -38,7 +38,9 @@ class ImovelController extends Controller
      */
     public function show($id)
     {
-        //
+        $imovel = Imovel::find($id);
+        $imovel->cidade->estado;
+        return $imovel;
     }
 
     /**

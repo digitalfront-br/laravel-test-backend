@@ -12,11 +12,11 @@ $factory->define(Imovel::class, function (Faker $faker) {
     $file_cidades = file(storage_path('app/public/cidades.csv'));
 
     foreach ($file_estados as $estado) {
-        $estados[] = explode(',',$estado);
+        $estados[] = explode(',', $estado);
     }
 
     foreach ($file_cidades as $cidade) {
-        $cidades[] = explode(',',$cidade);
+        $cidades[] = explode(',', $cidade);
     }
 
     foreach ($estados as $item) {
